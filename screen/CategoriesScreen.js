@@ -5,7 +5,10 @@ import { CATEGORIES } from "../data/dummy-data";
 function CategoriesScreen({ navigation }) {
   function renderCategoryItem(itemData) {
     function pressHandler() {
-      navigation.navigate("MealsOverview");
+      navigation.navigate("MealsOverview", {
+        // data 전송
+        categoryId: itemData.item.id,
+      });
     }
 
     return (
